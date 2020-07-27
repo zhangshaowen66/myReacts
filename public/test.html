@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工号资源管理平台</title>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <style>
+
+        .nav{
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #ffffff;
+            height: 100%;
+            border-right: 1px solid #cccccc;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #router li{
+            list-style: none;
+            height: 56px;
+            line-height: 56px;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+        #router li:hover{
+            background: #ecf5ff;
+            color: rgb(58, 113, 168);
+        }
+        .iframes{
+            width: 89%;
+            position: absolute;
+            height: 100%;
+            border: none;
+            left: 210px;
+            top: 0;
+        }
+        .cl58{
+            color: rgb(58, 113, 168);
+        }
+    </style>
+    <script>
+        let router = [
+            {
+                name: '资源管理-资源概览',
+                path: '/',
+                icon: 'el-icon-s-home',
+            },
+            {
+                name: '资源管理-资源配置',
+                path: '/ResourceOverview',
+                icon: 'el-icon-s-home',
+            },
+            {
+                name: '资源管理-资源回收配置',
+                path: '/Recycle',
+                icon: 'el-icon-s-home',
+            },
+
+            {
+                name: '资源管理-工单信息查询',
+                path: '/WorkOrder',
+                icon: 'el-icon-s-home',
+            },
+
+            {
+                name: '资源管理-坐席信息',
+                path: '/WorkOrder/AgentMsg',
+                icon: 'el-icon-s-home',
+            },
+
+            {
+                name: '行政-工号资源申请',
+                path: '/apply',
+                icon: 'el-icon-s-home',
+            },
+            {
+                name: '行政-工单信息查询',
+                path: '/AgentMsgSearch',
+                icon: 'el-icon-s-home',
+            },
+            {
+                name: '行政-坐席信息查询',
+                path: '/admin/AgentMsg',
+                icon: 'el-icon-s-home',
+            },
+            {
+                name: '中心IT-待处理工单',
+                path: '/WorkOrderProcessing',
+                icon: 'el-icon-s-home',
+            },
+            {
+                name: '中心IT-工单管理',
+                path: '/WorkOrderManagement',
+                icon: 'el-icon-s-home',
+            },
+            {
+                name: '中心IT-坐席信息',
+                path: '/AgentMsg',
+                icon: 'el-icon-s-home',
+            },
+            {
+                name: '费用管理-机构人员配置',
+                path: '/deploy'
+            },
+            {
+                name: '费用管理-费用管理',
+                path: '/cost'
+            },
+            {
+                name: '费用管理-机构',
+                path: '/mechanism'
+            }
+        ]
+        $(function () {
+            document.getElementById('iframeU').src = window.location.protocol+'//'+window.location.host+'/#'
+            router.forEach(item => {
+                $('#router').append(`<li url="${item.path}">${item.name}</li>`)
+            })
+            $('#router').on('click', 'li', function () {
+                $(this).addClass('cl58').siblings().removeClass('cl58')
+                document.getElementById('iframeU').src = window.location.protocol+'//'+window.location.host+'/#' + $(this).attr('url');
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="content">
+    <div class="nav">
+        <ul id="router">
+        </ul>
+    </div>
+    <iframe class="iframes" id="iframeU"></iframe>
+</div>
+</body>
+</html>
