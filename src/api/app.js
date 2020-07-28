@@ -15,12 +15,12 @@ request({
 }, function (error, response, body) {
     if (!error && response.statusCode == 200) {
         for (let keys in body.paths)  {
-            cont += `
-                export function _${keys.replace('/', '')} (data) {
-                    // ${body.paths[keys][Object.keys(body.paths[keys])[0]].summary}
-                    return $axios('${keys}', data, '${Object.keys(body.paths[keys])[0]}')
-                }
-            `
+cont += `
+export function _${keys.replace('/', '')} (data) {
+    // ${body.paths[keys][Object.keys(body.paths[keys])[0]].summary}
+    return $axios('${keys}', data, '${Object.keys(body.paths[keys])[0]}')
+}
+`
         }
 
         fs.writeFileSync('./server.js', cont)
