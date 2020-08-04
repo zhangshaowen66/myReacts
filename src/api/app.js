@@ -1,6 +1,5 @@
 const fs =  require('fs') //文件读写库
 const request = require("request");//request请求库
-let data = [] // 把这个数组写入excel   
 let cont = `import {$axios} from './requset';`
 request({
     url: "http://59.36.173.92:8088/v2/api-docs",//你要请求的地址

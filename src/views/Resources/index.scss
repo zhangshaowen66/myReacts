@@ -43,7 +43,7 @@
     background: #5078d4;
     border-right: 5px solid #ffffff;
     color: #fff;
-    &:nth-child(5) {
+    &:nth-child(4) {
       border-right: none;
     }
   }
@@ -75,4 +75,130 @@
     width: 30%;
     background: #5078d4;
   }
+}
+.box-card{
+  margin-bottom: 40px;
+}
+.body {
+  margin-top: 50px;
+  text-align: center;
+  .clearfix{
+    text-align: left;
+  }
+  .el-row {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .el-col {
+    border-radius: 4px;
+  }
+  .grid-left {
+    .item-title {
+      text-align: right;
+      height: 36px;
+      line-height: 36px;
+    }
+  }
+  .grid-content,
+  .grid-left,
+  .grid-right {
+    border-radius: 4px;
+    min-height: 36px;
+  }
+  .grid-content {
+    display: flex;
+    .item {
+      display: inline-block;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      height: 36px;
+      cursor: pointer;
+      line-height: 36px;
+      width: 10.1%;
+      .item-child{
+        color: #7b7b7b;
+      }
+      .item-child:nth-child(1) {
+        margin-bottom: 3px;
+        color: #2a2a2a;
+      }
+    }
+  }
+  .bgef6{
+    background: #5078d4;
+    border-radius: 20px;
+    color: #ffffff !important;
+    .item-child{
+      color: #ffffff !important;
+    }
+  }
+  .bgf1{
+    background: #f1f1f1;
+    border-radius: 20px;
+    color: #7b7b7b;
+    .item-child{
+      color: #7b7b7b !important;
+    }
+  }
+  .cl2a{
+    color: #2a2a2a !important;
+  }
+
+  .row-bg {
+    padding: 10px 0;
+  }
+}
+/*圆圈*/
+.circle{
+  width:140px;
+  display:inline-block;
+  height:140px;
+  position: relative;
+  margin-top: 14px;
+  background: #ccc;
+  border-radius: 50%;
+}
+.pie_left, .pie_right{
+  width:140px;
+  height:140px;
+  position: absolute;
+  top:0px;
+  left:0px;
+}
+.traleft{
+  transition: transform 0.2s 0.5s ease;
+}
+.right{
+  transition: transform 0.5s ease;
+}
+.left, .right{
+  position: absolute;
+  left:0px;
+  top:0px;
+  border-radius:50%;
+  background: #5078d4;
+  width:100%;
+  height:100%;
+  transform: rotate(-180deg);
+}
+.pie_left, .left{
+  clip: rect(auto, 70px, auto, auto);
+  /*clip:rect(0,100px,auto,0);*/
+}
+.pie_right, .right{
+  clip:rect(0, auto, auto, 70px);
+}
+.mask{
+  position: absolute;
+  top:12px;
+  left:12px;
+  width:116px;
+  height:116px;
+  padding-top: 36px;
+  font-size:18px;
+  border-radius: 50%;
+  background: #fff;
+  text-align: center
 }
