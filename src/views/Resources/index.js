@@ -79,6 +79,7 @@ import {Card, Layout} from 'element-react'
          await _querySummaryById({centreId: id})
              .then(
                  res => {
+
                      if (res.data.code === 0) {
                          this.setState({
                              summaryData: res.data.data
