@@ -40,6 +40,9 @@ const lessModuleRegex = /\.module\.less$/;
 
 在上面的sass那边copy一份，配置成为less
 
+配置 htmlWebpackPlugin 在node_modules 里面找到react-scripts/config/webpack.config文件
+ 获取一个时间搓在HtmlWebpackPlugin里面配置一个 Version 打包后会在HTML 标签内生成一个时间戳作为版本号
+ 在HTML标签内部添加  version="<%= htmlWebpackPlugin.options.Version %>"
 ```
 
 
