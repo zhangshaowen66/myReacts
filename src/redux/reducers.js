@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import {SYSTEMDATA,PARTNERDATA,CENTERDATA,MECHANISM} from "./actionType";
+import {SYSTEMDATA,PARTNERDATA,CENTERDATA,MECHANISM, ACTIONList} from "./actionType";
 export const LOGIN = 'LOGIN'
 export const DECREMENT = 'DECREMENT'
 const initState = {
@@ -56,7 +56,7 @@ const initState = {
     },
     action: {}
 }
-
+// 用户
 const userData = (state = initState, action) => {
     switch (action.type) {
         // 查询系统
@@ -75,6 +75,16 @@ const userData = (state = initState, action) => {
             return state
     }
 }
+
+// 系统
+
+const systemData = (state = initState, action) => {
+    switch (action.type) {
+        case ACTIONList:
+            return {...state, mechanism: action.data}
+    }
+}
+
 export default combineReducers({
     userData
 })
