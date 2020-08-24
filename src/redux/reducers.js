@@ -2,6 +2,7 @@ import { combineReducers } from 'redux'
 import {SYSTEMDATA,PARTNERDATA,CENTERDATA,MECHANISM, ACTIONList} from "./actionType";
 export const LOGIN = 'LOGIN'
 export const DECREMENT = 'DECREMENT'
+
 const initState = {
     systemData: [], // 查询系统
     partnerData: [], // 查询电话平台

@@ -9,7 +9,7 @@ request({
         "content-type": "application/json",
         "Cookie":""//如果携带了cookie
     },
-    body: {"page":1,"pageSize":3,"sortAsc":false,"sortKey":"lastVisitTime","prodLineId":2},
+    body: {"page":1,"pageSize":3},
     //这里是post 传的参数 如果是get 方法在url上拼接就好了
 }, function (error, response, body) {
     if (!error && response.statusCode == 200) {
